@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	<EditText android:id="@+id/inputName"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:singleLine="true"/>
+	
+	<TableLayout 
+	    android:id="@+id/checktable"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/inputName">
+	    
+	    <TableRow android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	        
+	        <CheckBox 
+	            android:id="@+id/checklunch"
+	            android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+	    		android:text="午饭"
+	    		android:textAppearance="?android:attr/textAppearanceMedium"/>
+	        
+	        <CheckBox 
+	            android:id="@+id/checkdinner"
+	            android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+	    		android:text="晚饭"
+	    		android:textAppearance="?android:attr/textAppearanceMedium"/>
+	        
+	        <CheckBox 
+	            android:id="@+id/checkdrink"
+	            android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+	    		android:text="饮料"
+	    		android:textAppearance="?android:attr/textAppearanceMedium"/>
+	        	        
+	        
+	    </TableRow>
+	    
+	</TableLayout>
+
+	<Button
+	    android:id="@+id/btnAdd"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_below="@+id/inputName"
+	    android:text="添加"
+	    android:textAppearance="?android:attr/textAppearanceSmall" />
+	
+	<ListView 
+	    android:id="@+id/manage_list"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@id/btnAdd">
+	    
+	    
+	</ListView>
+
+</RelativeLayout>
