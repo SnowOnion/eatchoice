@@ -32,7 +32,8 @@ public class ShakeDetector implements SensorEventListener {
 	/**
 	 * 摇晃检测阈值，决定了对摇晃的敏感程度，越小越敏感。
 	 */
-	public int shakeThreshold = 5000;
+//	public int shakeThreshold = 5000;
+	public int shakeThreshold = 500;
 	public ShakeDetector(Context context) {
 		mContext = context;
 		mSensorManager = (SensorManager) context

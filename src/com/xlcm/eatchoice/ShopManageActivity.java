@@ -113,12 +113,17 @@ public class ShopManageActivity extends Activity{
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-			// TODO Auto-generated method stub
 			
 			if(mode_add){
 				mode_add = false;
 				inputName.setEnabled(false);
-				arg1.setBackground(getResources().getDrawable(R.drawable.selected));
+				
+				// APILevel<16: setBackgroundDrawable(Drawable background)
+				// APILevel>=16: setBackground(Drawable background)
+				// http://toolib.net/reference/android/widget/AdapterView.html
+				
+				// arg1.setBackground(getResources().getDrawable(R.drawable.selected));
+				arg1.setBackgroundDrawable(getResources().getDrawable(R.drawable.selected));
 				selectedid = arg2;			
 				TextView tv = (TextView)arg1.findViewById(R.id.manage_shop_name);
 				selectedstr = tv.getText().toString();
@@ -129,7 +134,8 @@ public class ShopManageActivity extends Activity{
 					mode_add = true;
 					inputName.setEnabled(true);
 					btnAdd.setText("Ìí¼Ó");
-					arg0.getChildAt(selectedid).setBackground(null);
+					// arg0.getChildAt(selectedid).setBackground(null);
+					arg0.getChildAt(selectedid).setBackgroundDrawable(null);
 					selectedid = -1;
 					selectedstr = "";					
 				}
@@ -137,8 +143,10 @@ public class ShopManageActivity extends Activity{
 					mode_add = false;
 					inputName.setEnabled(false);
 					btnAdd.setText("É¾³ý");
-					arg0.getChildAt(selectedid).setBackground(null);
-					arg1.setBackground(getResources().getDrawable(R.drawable.selected));
+					// arg0.getChildAt(selectedid).setBackground(null);
+					// arg1.setBackground(getResources().getDrawable(R.drawable.selected));
+					arg0.getChildAt(selectedid).setBackgroundDrawable(null);
+					arg1.setBackgroundDrawable(getResources().getDrawable(R.drawable.selected));
 					selectedid = arg2;
 					TextView tv = (TextView)arg1.findViewById(R.id.manage_shop_name);
 					selectedstr = tv.getText().toString();
