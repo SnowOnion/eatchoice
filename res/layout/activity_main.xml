@@ -6,8 +6,8 @@
 
     <Spinner android:id="@+id/mode"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="viewStart"/>
+        android:layout_height="wrap_content"/>
+        <!-- android:textAlignment="viewStart" -->        
     
     <ListView
         android:id="@+id/choicelist"
